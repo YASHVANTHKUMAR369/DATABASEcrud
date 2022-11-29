@@ -1,0 +1,12 @@
+<html>
+{% extends 'crudApp/base.html' %}
+{%block content %}
+	<h1> Add New Student information</h1>
+	<form method= 'POST'>
+		{{form.as_p}} <!--this form is from views.py line 10 this line last value = {'form':form})-->
+		{%csrf_token%}
+		<input type='submit' value='Add Student'>
+	</form>
+	
+	{% endblock %}
+</html>

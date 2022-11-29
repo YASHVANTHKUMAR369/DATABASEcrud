@@ -1,0 +1,24 @@
+<html>
+{% extends 'crudApp/base.html' %}
+{%block content %}
+	<h2>Student Details </h2>
+	<table>
+		<thead>
+			<th> Student No. </th>
+			<th> Student Name </th>
+			<th> Student Class </th>
+			<th> Student Address </th>
+		</thead>
+		<tr>
+		{% for st in students %} <!-- this students is from views.py line 6 this line last value ={'students':students} -->
+			<td> {{st.sno}}</td>
+			<td> {{st.sname}}</td>
+			<td> {{st.sclass}}</td>
+			<td> {{st.saddress}}</td>
+			<td> <a href= '/update/{{st.id}}'> Update </a> <a href= '/delete/{{st.id}}'> Delete </a> </td>
+		</tr>
+		{% endfor%}
+	</table>
+	<a href = '/create'> <button type="button"> Add New Student Name </button> </a>
+{% endblock %}
+</html>
